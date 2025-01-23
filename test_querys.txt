@@ -1,0 +1,51 @@
+Here are some tests for the  queries and mutations to use in 
+
+query {
+  products {
+    id
+    name
+    price
+    quantity
+    category
+  }
+}
+
+query {
+  product(id: "1") {
+    id
+    name
+    price
+    quantity
+    category
+  }
+}
+
+mutation {
+  createProduct(name: "Donut", price: 2.0, quantity: 100, category: "Pastries") {
+    product {
+      id
+      name
+      price
+      quantity
+      category
+    }
+  }
+}
+
+mutation {
+  updateProduct(id: "1", price: 27.0, quantity: 8) {
+    product {
+      id
+      name
+      price
+      quantity
+      category
+    }
+  }
+}
+
+mutation {
+  deleteProduct(id: "3") {
+    ok
+  }
+}
